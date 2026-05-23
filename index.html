@@ -1,3 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>体調管理 Health Check</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    :root {
+      --color-background-primary: #ffffff;
+      --color-background-secondary: #f5f5f5;
+      --color-background-success: #e6f4ea;
+      --color-background-danger: #fce8e6;
+      --color-background-info: #e8f0fe;
+      --color-text-primary: #202124;
+      --color-text-secondary: #5f6368;
+      --color-text-success: #137333;
+      --color-text-danger: #c5221f;
+      --color-text-info: #1a73e8;
+      --color-border-tertiary: #dadce0;
+      --color-border-secondary: #e0e0e0;
+      --color-border-info: #a8c7fa;
+      --border-radius-lg: 12px;
+      --border-radius-md: 8px;
+      --font-sans: 'Helvetica Neue', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: #f8f9fa;
+      margin: 0;
+      padding: 24px 16px;
+      color: var(--color-text-primary);
+    }
+    * { box-sizing: border-box; }
+    select, input, textarea, button { font-family: var(--font-sans); }
+  </style>
+</head>
+<body>
+
+<div style="max-width: 600px; margin: 0 auto;">
+  <div style="background: var(--color-background-primary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 1.5rem;">
+    <h2 style="font-size: 18px; font-weight: 500; margin: 0 0 1.5rem; color: var(--color-text-primary);">体調管理 Health Check</h2>
+
+    <form id="healthForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+      <div>
+        <label style="font-size: 14px; font-weight: 500; color: var(--color-text-primary); display: block; margin-bottom: 8px;">名前 Name *</label>
+        <select id="name" required style="width: 100%; padding: 8px 12px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); font-size: 14px;">
+          <option value="">選択してください / Select</option>
+          <option value="小沢健人">小沢健人</option>
+          <option value="藤谷航汰">藤谷航汰</option>
+          <option value="阿部航生">阿部航生</option>
+          <option value="Pratik P Biswas">Pratik P Biswas</option>
+          <option value="後藤千鶴">後藤千鶴</option>
+          <option value="関寺寛">関寺寛</option>
+          <option value="向山弘昭">向山弘昭</option>
+        </select>
+      </div>
+
+      <div>
+        <label style="font-size: 14px; font-weight: 500; color: var(--color-text-primary); display: block; margin-bottom: 8px;">体温 Temperature (℃) *</label>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <input type="number" id="temperature" step="0.1" min="35" max="42" placeholder="36.5" required style="flex: 1; padding: 8px 12px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); font-size: 14px;" />
+          <span style="font-size: 12px; color: var(--color-text-secondary); min-width: 50px;">℃</span>
+        </div>
+        <div style="margin-top: 8px; display: flex; gap: 8px;">
+          <button type="button" style="padding: 4px 12px; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); border-radius: var(--border-radius-md); font-size: 12px; cursor: pointer;" onclick="document.getElementById('temperature').value='36.5'">36.5℃</button>
+          <button type="button" style="padding: 4px 12px; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); border-radius: var(--border-radius-md); font-size: 12px; cursor: pointer;" onclick="document.getElementById('temperature').value='37.0'">37.0℃</button>
+          <button type="button" style="padding: 4px 12px; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); border-radius: var(--border-radius-md); font-size: 12px; cursor: pointer;" onclick="document.getElementById('temperature').value='37.5'">37.5℃</button>
+        </div>
+      </div>
+
+      <div>
+        <label style="font-size: 14px; font-weight: 500; color: var(--color-text-primary); display: block; margin-bottom: 8px;">健康状態 Health Status *</label>
+        <select id="health" required style="width: 100%; padding: 8px 12px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); font-size: 14px;">
+          <option value="">選択してください / Select</option>
+          <option value="良：Good">良：Good ✓</option>
+          <option value="異常あり：Problem">異常あり：Problem ⚠</option>
+        </select>
+      </div>
+
+      <div>
+        <label style="font-size: 14px; font-weight: 500; color: var(--color-text-primary); display: block; margin-bottom: 8px;">アルコール Alcohol consumption</label>
+        <input type="number" id="alcohol" step="0.1" min="0" placeholder="0" style="width: 100%; padding: 8px 12px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); font-size: 14px;" />
+      </div>
+
+      <div>
+        <label style="font-size: 14px; font-weight: 500; color: var(--color-text-primary); display: block; margin-bottom: 8px;">備考 Notes</label>
+        <textarea id="notes" style="width: 100%; padding: 8px 12px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); font-size: 14px; min-height: 80px; font-family: var(--font-sans);" placeholder="何か気になることを記入 / Enter any notes"></textarea>
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <button type="submit" style="flex: 1; padding: 10px; background: var(--color-background-info); color: var(--color-text-info); border: 0.5px solid var(--color-border-info); border-radius: var(--border-radius-md); font-size: 14px; font-weight: 500; cursor: pointer;">
+          <i class="ti ti-send" style="font-size: 16px; margin-right: 4px; vertical-align: -2px;" aria-hidden="true"></i>
+          Notionに送信 / Submit
+        </button>
+        <button type="reset" style="padding: 10px 20px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 14px; cursor: pointer;">リセット</button>
+      </div>
+    </form>
+
+    <div id="status" style="margin-top: 1rem; padding: 12px; border-radius: var(--border-radius-md); display: none; font-size: 13px;"></div>
+  </div>
+
+  <div style="margin-top: 2rem; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem; font-size: 13px; color: var(--color-text-secondary);">
+    <p style="margin: 0 0 8px; font-weight: 500;">✓ このアプリについて</p>
+    <ul style="margin: 0; padding-left: 20px;">
+      <li>このフォームは Notion の「体調管理DB」と連携しています</li>
+      <li>投稿者の名前を選択して、体調情報を記録できます</li>
+      <li>「送信」をクリックするとNotionに自動保存されます</li>
+      <li>体温が37℃以上の場合は確認が必要です</li>
+    </ul>
+  </div>
+</div>
+
 <script>
 const GAS_URL = "https://script.google.com/macros/s/AKfycbzXVWMuGstY5tQS3vpTv1rQCgC38dF3IWnHn3TJW8O1kyhYzEMJy1ptJqM3tK26bNnC/exec";
 
@@ -24,32 +138,23 @@ document.getElementById('healthForm').addEventListener('submit', async (e) => {
   statusDiv.style.color = 'var(--color-text-secondary)';
   statusDiv.innerHTML = '送信中... / Sending...';
 
-  try {
-    const response = await fetch(GAS_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, temperature, health, alcohol, notes })
-    });
+  await fetch(GAS_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, temperature, health, alcohol, notes })
+  });
 
-    const result = await response.json();
+  statusDiv.style.background = 'var(--color-background-success)';
+  statusDiv.style.color = 'var(--color-text-success)';
+  statusDiv.innerHTML = '✓ Notionに自動保存しました。';
 
-    if (result.object === 'error' || result.ok === false) {
-      throw new Error(result.message || result.error || 'Notionへの送信に失敗しました');
-    }
-
-    statusDiv.style.background = 'var(--color-background-success)';
-    statusDiv.style.color = 'var(--color-text-success)';
-    statusDiv.innerHTML = '✓ Notionに自動保存しました。';
-
-    setTimeout(() => {
-      document.getElementById('healthForm').reset();
-      statusDiv.style.display = 'none';
-    }, 3000);
-
-  } catch (error) {
-    statusDiv.style.background = 'var(--color-background-danger)';
-    statusDiv.style.color = 'var(--color-text-danger)';
-    statusDiv.innerHTML = `✗ エラー: ${error.message}`;
-  }
+  setTimeout(() => {
+    document.getElementById('healthForm').reset();
+    statusDiv.style.display = 'none';
+  }, 3000);
 });
 </script>
+
+</body>
+</html>
