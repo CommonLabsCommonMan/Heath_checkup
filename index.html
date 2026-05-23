@@ -138,23 +138,42 @@ document.getElementById('healthForm').addEventListener('submit', async (e) => {
   statusDiv.style.color = 'var(--color-text-secondary)';
   statusDiv.innerHTML = '送信中... / Sending...';
 
-  await fetch(GAS_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, temperature, health, alcohol, notes })
-  });
+  try {
+    const response = await fetch(GAS_URL, {
+      method: 'POST',
+      redirect: 'follow',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify({ name, temperature, health, alcohol, notes })
+    });
 
-  statusDiv.style.background = 'var(--color-background-success)';
-  statusDiv.style.color = 'var(--color-text-success)';
-  statusDiv.innerHTML = '✓ Notionに自動保存しました。';
+    const text = await response.text();
+    const result = JSON.parse(text);
 
-  setTimeout(() => {
-    document.getElementById('healthForm').reset();
-    statusDiv.style.display = 'none';
-  }, 3000);
+    if (!response.ok || result.code !== 200) {
+      throw new Error(result.body || text);
+    }
+
+    statusDiv.style.background = 'var(--color-background-success)';
+    statusDiv.style.color = 'var(--color-text-success)';
+    statusDiv.innerHTML = '✓ Notionに自動保存しました。';
+
+    setTimeout(() => {
+      document.getElementById('healthForm').reset();
+      statusDiv.style.display = 'none';
+    }, 3000);
+
+  } catch (error) {
+    statusDiv.style.background = 'var(--color-background-danger)';
+    statusDiv.style.color = 'var(--color-text-danger)';
+    statusDiv.innerHTML = `✗ エラー: ${error.message}`;
+  }
 });
 </script>
+
+
+  
 
 </body>
 </html>
