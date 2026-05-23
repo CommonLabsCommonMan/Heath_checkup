@@ -151,7 +151,7 @@ document.getElementById('healthForm').addEventListener('submit', async (e) => {
     const text = await response.text();
     const result = JSON.parse(text);
 
-    if (!response.ok || result.code !== 200) {
+    if (!response.ok || (result.code && result.code !== 200)) {
       throw new Error(result.body || text);
     }
 
