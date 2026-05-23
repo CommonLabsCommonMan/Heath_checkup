@@ -1,0 +1,55 @@
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzXVWMuGstY5tQS3vpTv1rQCgC38dF3IWnHn3TJW8O1kyhYzEMJy1ptJqM3tK26bNnC/exec";
+
+document.getElementById('healthForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const statusDiv = document.getElementById('status');
+  const name = document.getElementById('name').value;
+  const temperature = parseFloat(document.getElementById('temperature').value) || null;
+  const health = document.getElementById('health').value;
+  const alcohol = parseFloat(document.getElementById('alcohol').value) || 0;
+  const notes = document.getElementById('notes').value;
+
+  if (!name || !health) {
+    statusDiv.style.display = 'block';
+    statusDiv.style.background = 'var(--color-background-danger)';
+    statusDiv.style.color = 'var(--color-text-danger)';
+    statusDiv.innerHTML = '⚠ 名前と健康状態を選択してください';
+    return;
+  }
+
+  statusDiv.style.display = 'block';
+  statusDiv.style.background = 'var(--color-background-secondary)';
+  statusDiv.style.color = 'var(--color-text-secondary)';
+  statusDiv.innerHTML = '送信中... / Sending...';
+
+  try {
+    const response = await fetch(GAS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, temperature, health, alcohol, notes })
+    });
+
+    const result = await response.json();
+
+    if (result.object === 'error' || result.ok === false) {
+      throw new Error(result.message || result.error || 'Notionへの送信に失敗しました');
+    }
+
+    statusDiv.style.background = 'var(--color-background-success)';
+    statusDiv.style.color = 'var(--color-text-success)';
+    statusDiv.innerHTML = '✓ Notionに自動保存しました。';
+
+    setTimeout(() => {
+      document.getElementById('healthForm').reset();
+      statusDiv.style.display = 'none';
+    }, 3000);
+
+  } catch (error) {
+    statusDiv.style.background = 'var(--color-background-danger)';
+    statusDiv.style.color = 'var(--color-text-danger)';
+    statusDiv.innerHTML = `✗ エラー: ${error.message}`;
+  }
+});
+</script>
