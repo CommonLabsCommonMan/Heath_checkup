@@ -139,25 +139,18 @@ document.getElementById('healthForm').addEventListener('submit', async (e) => {
   statusDiv.innerHTML = '送信中... / Sending...';
 
   try {
-    const response = await fetch(GAS_URL, {
+    await fetch(GAS_URL, {
       method: 'POST',
-      redirect: 'follow',
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'text/plain;charset=utf-8'
       },
       body: JSON.stringify({ name, temperature, health, alcohol, notes })
     });
 
-    const text = await response.text();
-    const result = JSON.parse(text);
-
-    if (!response.ok || (result.code && result.code !== 200)) {
-      throw new Error(result.body || text);
-    }
-
     statusDiv.style.background = 'var(--color-background-success)';
     statusDiv.style.color = 'var(--color-text-success)';
-    statusDiv.innerHTML = '✓ Notionに自動保存しました。';
+    statusDiv.innerHTML = '✓ 送信しました。Notion反映を確認してください。';
 
     setTimeout(() => {
       document.getElementById('healthForm').reset();
@@ -167,7 +160,7 @@ document.getElementById('healthForm').addEventListener('submit', async (e) => {
   } catch (error) {
     statusDiv.style.background = 'var(--color-background-danger)';
     statusDiv.style.color = 'var(--color-text-danger)';
-    statusDiv.innerHTML = `✗ エラー: ${error.message}`;
+    statusDiv.innerHTML = '✗ 送信に失敗しました';
   }
 });
 </script>
