@@ -15,19 +15,19 @@
       --surface-card-bottom: rgba(255,255,255,0.38);
       --surface-input: rgba(255,255,255,0.46);
       --glass-border: rgba(255,255,255,0.42);
-      --glass-shadow: rgba(15, 23, 42, 0.12);
-      --glass-shadow-soft: rgba(15, 23, 42, 0.08);
-      --focus-ring: rgba(59, 130, 246, 0.22);
+      --glass-shadow: rgba(15,23,42,0.12);
+      --glass-shadow-soft: rgba(15,23,42,0.08);
+      --focus-ring: rgba(59,130,246,0.22);
       --accent-blue: #0f4c81;
-      --success-bg: rgba(230, 244, 234, 0.84);
+      --success-bg: rgba(230,244,234,0.84);
       --success-text: #137333;
-      --success-border: rgba(19, 115, 51, 0.16);
-      --danger-bg: rgba(252, 232, 230, 0.90);
+      --success-border: rgba(19,115,51,0.16);
+      --danger-bg: rgba(252,232,230,0.90);
       --danger-text: #c5221f;
-      --danger-border: rgba(197, 34, 31, 0.16);
-      --pending-bg: rgba(245, 247, 250, 0.82);
+      --danger-border: rgba(197,34,31,0.16);
+      --pending-bg: rgba(245,247,250,0.82);
       --pending-text: #4b5563;
-      --pending-border: rgba(75, 85, 99, 0.10);
+      --pending-border: rgba(75,85,99,0.10);
       --chip-ring: rgba(255,255,255,0.55);
       --radius-xl: 28px;
       --radius-lg: 20px;
@@ -37,7 +37,7 @@
       --body-bg:
         radial-gradient(circle at 14% 12%, rgba(255,255,255,0.92), rgba(255,255,255,0) 26%),
         radial-gradient(circle at 86% 10%, rgba(175,205,255,0.55), rgba(255,255,255,0) 22%),
-        radial-gradient(circle at 75% 78%, rgba(191, 233, 255, 0.35), rgba(255,255,255,0) 24%),
+        radial-gradient(circle at 75% 78%, rgba(191,233,255,0.35), rgba(255,255,255,0) 24%),
         linear-gradient(135deg, #edf3fa 0%, #f6f9fc 42%, #e7eef8 100%);
     }
 
@@ -46,36 +46,35 @@
       --text-body: #d3dae6;
       --text-muted: #a3aec2;
       --surface-panel: rgba(18,23,35,0.46);
-      --surface-card-top: rgba(24, 30, 44, 0.76);
-      --surface-card-bottom: rgba(17, 22, 34, 0.56);
-      --surface-input: rgba(28, 35, 50, 0.66);
+      --surface-card-top: rgba(24,30,44,0.76);
+      --surface-card-bottom: rgba(17,22,34,0.56);
+      --surface-input: rgba(28,35,50,0.66);
       --glass-border: rgba(255,255,255,0.12);
-      --glass-shadow: rgba(0, 0, 0, 0.34);
-      --glass-shadow-soft: rgba(0, 0, 0, 0.24);
-      --focus-ring: rgba(96, 165, 250, 0.26);
+      --glass-shadow: rgba(0,0,0,0.34);
+      --glass-shadow-soft: rgba(0,0,0,0.24);
+      --focus-ring: rgba(96,165,250,0.26);
       --accent-blue: #9cc8ff;
-      --success-bg: rgba(22, 70, 42, 0.70);
+      --success-bg: rgba(22,70,42,0.70);
       --success-text: #91e0aa;
-      --success-border: rgba(145, 224, 170, 0.18);
-      --danger-bg: rgba(101, 34, 39, 0.78);
+      --success-border: rgba(145,224,170,0.18);
+      --danger-bg: rgba(101,34,39,0.78);
       --danger-text: #ffb3ac;
-      --danger-border: rgba(255, 179, 172, 0.18);
-      --pending-bg: rgba(40, 48, 66, 0.82);
+      --danger-border: rgba(255,179,172,0.18);
+      --pending-bg: rgba(40,48,66,0.82);
       --pending-text: #d1d8e5;
       --pending-border: rgba(255,255,255,0.10);
       --chip-ring: rgba(255,255,255,0.16);
       --body-bg:
-        radial-gradient(circle at 15% 14%, rgba(87, 125, 255, 0.15), rgba(0,0,0,0) 26%),
-        radial-gradient(circle at 85% 12%, rgba(69, 168, 255, 0.18), rgba(0,0,0,0) 24%),
-        radial-gradient(circle at 75% 78%, rgba(62, 93, 168, 0.16), rgba(0,0,0,0) 26%),
+        radial-gradient(circle at 15% 14%, rgba(87,125,255,0.15), rgba(0,0,0,0) 26%),
+        radial-gradient(circle at 85% 12%, rgba(69,168,255,0.18), rgba(0,0,0,0) 24%),
+        radial-gradient(circle at 75% 78%, rgba(62,93,168,0.16), rgba(0,0,0,0) 26%),
         linear-gradient(135deg, #0d1320 0%, #131b2b 42%, #0f1726 100%);
     }
 
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { min-height: 100%; }
 
     body {
-      margin: 0;
       padding: 28px 16px 48px;
       font-family: var(--font-sans);
       color: var(--text-body);
@@ -87,10 +86,7 @@
 
     button, input, select, textarea { font: inherit; }
 
-    .shell {
-      max-width: 680px;
-      margin: 0 auto;
-    }
+    .shell { max-width: 680px; margin: 0 auto; }
 
     .topbar {
       display: flex;
@@ -98,11 +94,11 @@
       margin-bottom: 12px;
     }
 
-    .theme-toggle {
+    .pill-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 12px;
+      padding: 9px 14px;
       border: 1px solid var(--glass-border);
       border-radius: 999px;
       background: var(--surface-panel);
@@ -112,10 +108,11 @@
       -webkit-backdrop-filter: blur(18px);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 10px 24px var(--glass-shadow-soft);
       transition: transform 160ms ease, background 180ms ease, box-shadow 180ms ease;
+      font-size: 13px;
+      font-weight: 500;
     }
 
-    .theme-toggle:hover,
-    .theme-toggle:focus-visible {
+    .pill-btn:hover, .pill-btn:focus-visible {
       transform: translateY(-1px);
       outline: none;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 14px 28px var(--glass-shadow);
@@ -135,6 +132,7 @@
         0 6px 22px var(--glass-shadow-soft),
         inset 0 1px 0 rgba(255,255,255,0.18);
       isolation: isolate;
+      margin-bottom: 16px;
     }
 
     .glass-card::before {
@@ -151,36 +149,24 @@
     .glass-card::after {
       content: "";
       position: absolute;
-      top: -40%;
-      left: -25%;
-      width: 68%;
-      height: 180%;
+      top: -40%; left: -25%;
+      width: 68%; height: 180%;
       transform: rotate(22deg);
       background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.01));
       pointer-events: none;
-      opacity: 0.9;
     }
 
+    /* TITLE */
     .title-row {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 12px;
       margin-bottom: 1.2rem;
     }
 
-    .title-main {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
     .title-badge {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
       border-radius: 14px;
       background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0.12));
       border: 1px solid rgba(255,255,255,0.22);
@@ -191,7 +177,6 @@
     }
 
     .glass-title {
-      margin: 0;
       font-size: 22px;
       font-weight: 650;
       line-height: 1.1;
@@ -200,11 +185,12 @@
     }
 
     .glass-subtitle {
-      margin: 4px 0 0;
+      margin-top: 4px;
       font-size: 13px;
       color: var(--text-muted);
     }
 
+    /* CHIP ROW */
     .chip-row {
       display: flex;
       flex-wrap: wrap;
@@ -228,11 +214,9 @@
     }
 
     .chip-avatar {
-      width: 24px;
-      height: 24px;
+      width: 24px; height: 24px;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
+      display: grid; place-items: center;
       color: white;
       font-weight: 700;
       font-size: 11px;
@@ -240,6 +224,7 @@
       flex: 0 0 auto;
     }
 
+    /* FORM */
     .health-form {
       display: flex;
       flex-direction: column;
@@ -259,9 +244,7 @@
       letter-spacing: -0.01em;
     }
 
-    .glass-select,
-    .glass-input,
-    .glass-textarea {
+    .glass-select, .glass-input, .glass-textarea {
       width: 100%;
       padding: 12px 14px;
       border-radius: var(--radius-sm);
@@ -270,9 +253,7 @@
       color: var(--text-strong);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.14),
-        0 8px 24px rgba(15,23,42,0.05);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 8px 24px rgba(15,23,42,0.05);
       transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease, transform 180ms ease;
       outline: none;
       appearance: none;
@@ -282,48 +263,24 @@
       background-image:
         linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
         linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
-      background-position:
-        calc(100% - 20px) calc(50% - 2px),
-        calc(100% - 14px) calc(50% - 2px);
+      background-position: calc(100% - 20px) calc(50% - 2px), calc(100% - 14px) calc(50% - 2px);
       background-size: 6px 6px, 6px 6px;
       background-repeat: no-repeat;
       padding-right: 40px;
     }
 
-    .glass-input:focus,
-    .glass-select:focus,
-    .glass-textarea:focus {
+    .glass-input:focus, .glass-select:focus, .glass-textarea:focus {
       border-color: rgba(96,165,250,0.64);
-      box-shadow:
-        0 0 0 4px var(--focus-ring),
-        inset 0 1px 0 rgba(255,255,255,0.20),
-        0 12px 28px rgba(59,130,246,0.12);
+      box-shadow: 0 0 0 4px var(--focus-ring), inset 0 1px 0 rgba(255,255,255,0.20), 0 12px 28px rgba(59,130,246,0.12);
       transform: translateY(-1px);
     }
 
-    .glass-textarea {
-      min-height: 92px;
-      resize: vertical;
-    }
+    .glass-textarea { min-height: 92px; resize: vertical; }
 
-    .temp-row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
+    .temp-row { display: flex; gap: 12px; align-items: center; }
+    .temp-unit { min-width: 44px; font-size: 12px; color: var(--text-muted); }
 
-    .temp-unit {
-      min-width: 44px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .quick-row {
-      margin-top: 8px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .quick-row { margin-top: 8px; display: flex; gap: 8px; flex-wrap: wrap; }
 
     .quick-btn {
       padding: 6px 12px;
@@ -339,23 +296,15 @@
       transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
     }
 
-    .quick-btn:hover,
-    .quick-btn:focus-visible,
-    .quick-btn.active {
+    .quick-btn:hover, .quick-btn:focus-visible, .quick-btn.active {
       transform: translateY(-1px);
       outline: none;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 10px 20px rgba(15,23,42,0.10);
       border-color: rgba(96,165,250,0.38);
     }
 
-    .actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 4px;
-    }
+    .actions { display: flex; gap: 10px; margin-top: 4px; }
 
-    .primary-btn,
-    .secondary-btn {
+    .primary-btn, .secondary-btn {
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-md);
       cursor: pointer;
@@ -370,12 +319,8 @@
       color: var(--accent-blue);
       font-size: 14px;
       font-weight: 650;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.10)),
-        rgba(96,165,250,0.18);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.24),
-        0 10px 28px rgba(59,130,246,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.10)), rgba(96,165,250,0.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.24), 0 10px 28px rgba(59,130,246,0.12);
     }
 
     .secondary-btn {
@@ -385,15 +330,11 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
     }
 
-    .primary-btn:hover,
-    .secondary-btn:hover,
-    .primary-btn:focus-visible,
-    .secondary-btn:focus-visible {
+    .primary-btn:hover, .secondary-btn:hover,
+    .primary-btn:focus-visible, .secondary-btn:focus-visible {
       transform: translateY(-1px);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.26),
-        0 14px 30px rgba(15,23,42,0.12);
       outline: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.26), 0 14px 30px rgba(15,23,42,0.12);
     }
 
     .status-box {
@@ -404,23 +345,19 @@
       align-items: center;
       gap: 10px;
       font-size: 13px;
-      border: 1px solid var(--pending-border);
-      background: var(--pending-bg);
-      color: var(--pending-text);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
     }
 
-    .status-box.show {
-      display: flex;
-    }
+    .status-box.show { display: flex; }
+    .status-box.pending { background: var(--pending-bg); color: var(--pending-text); border: 1px solid var(--pending-border); }
+    .status-box.success { background: var(--success-bg); color: var(--success-text); border: 1px solid var(--success-border); }
+    .status-box.error   { background: var(--danger-bg);  color: var(--danger-text);  border: 1px solid var(--danger-border); }
 
     .status-icon {
-      width: 26px;
-      height: 26px;
-      display: grid;
-      place-items: center;
+      width: 26px; height: 26px;
+      display: grid; place-items: center;
       border-radius: 50%;
       flex: 0 0 auto;
       font-size: 14px;
@@ -428,44 +365,195 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
     }
 
-    .status-copy {
+    .status-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .status-title { font-weight: 650; }
+    .status-detail { opacity: 0.9; line-height: 1.35; }
+
+    /* ── NAME MANAGER PANEL ── */
+    .manage-card {
+      position: relative;
+      overflow: hidden;
+      padding: 1.5rem;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, var(--surface-card-top), var(--surface-card-bottom));
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow: 0 18px 55px var(--glass-shadow), 0 6px 22px var(--glass-shadow-soft), inset 0 1px 0 rgba(255,255,255,0.18);
+      isolation: isolate;
+      margin-bottom: 16px;
+      display: none;
+    }
+
+    .manage-card.open { display: block; }
+
+    .manage-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05) 38%, rgba(255,255,255,0.01) 64%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .manage-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.1rem;
+    }
+
+    .manage-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 650;
+      color: var(--text-strong);
+      letter-spacing: -0.02em;
+    }
+
+    .manage-title i { color: var(--accent-blue); font-size: 18px; }
+
+    .add-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .add-row input {
+      flex: 1;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--surface-input);
+      color: var(--text-strong);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
+      outline: none;
+      font-size: 14px;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .add-row input:focus {
+      border-color: rgba(96,165,250,0.64);
+      box-shadow: 0 0 0 4px var(--focus-ring), inset 0 1px 0 rgba(255,255,255,0.20);
+    }
+
+    .add-row input::placeholder { color: var(--text-muted); }
+
+    .add-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(96,165,250,0.38);
+      background: linear-gradient(180deg, rgba(96,165,250,0.28), rgba(96,165,250,0.12));
+      color: var(--accent-blue);
+      font-size: 14px;
+      font-weight: 650;
+      cursor: pointer;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+      white-space: nowrap;
+    }
+
+    .add-btn:hover, .add-btn:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 10px 24px rgba(59,130,246,0.14);
+    }
+
+    .name-list {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 8px;
+    }
+
+    .name-list-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--surface-panel);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
+      transition: background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .name-list-item:hover {
+      background: var(--surface-input);
+    }
+
+    .name-list-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      color: white;
+      font-weight: 700;
+      font-size: 12px;
+      box-shadow: 0 0 0 2px var(--chip-ring);
+      flex: 0 0 auto;
+    }
+
+    .name-list-label {
+      flex: 1;
+      font-size: 14px;
+      color: var(--text-strong);
       min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
-    .status-title {
-      font-weight: 650;
-      color: currentColor;
+    .name-list-tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(96,165,250,0.14);
+      color: var(--accent-blue);
+      border: 1px solid rgba(96,165,250,0.22);
+      white-space: nowrap;
     }
 
-    .status-detail {
-      color: inherit;
-      opacity: 0.9;
-      line-height: 1.35;
+    .delete-btn {
+      display: grid; place-items: center;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      flex: 0 0 auto;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
     }
 
-    .status-box.pending {
-      background: var(--pending-bg);
-      color: var(--pending-text);
-      border-color: var(--pending-border);
-    }
-
-    .status-box.success {
-      background: var(--success-bg);
-      color: var(--success-text);
-      border-color: var(--success-border);
-    }
-
-    .status-box.error {
+    .delete-btn:hover, .delete-btn:focus-visible {
       background: var(--danger-bg);
       color: var(--danger-text);
       border-color: var(--danger-border);
+      transform: scale(1.08);
+      outline: none;
     }
 
+    .manage-hint {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* INFO PANEL */
     .info-panel {
-      margin-top: 1.8rem;
+      margin-top: 0;
       padding: 1rem 1.1rem;
       border-radius: var(--radius-lg);
       background: var(--surface-panel);
@@ -474,100 +562,86 @@
       font-size: 13px;
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.18),
-        0 12px 28px rgba(15,23,42,0.06);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 28px rgba(15,23,42,0.06);
     }
 
-    .info-panel p {
-      margin: 0 0 8px;
-      color: var(--text-strong);
-      font-weight: 600;
-    }
-
-    .info-panel ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .info-panel li + li {
-      margin-top: 4px;
-    }
+    .info-panel p { margin-bottom: 8px; color: var(--text-strong); font-weight: 600; }
+    .info-panel ul { padding-left: 20px; }
+    .info-panel li + li { margin-top: 4px; }
 
     @media (max-width: 640px) {
-      body {
-        padding: 18px 12px 32px;
-      }
-
-      .glass-card {
-        padding: 1.15rem;
-        border-radius: 22px;
-      }
-
-      .title-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .secondary-btn {
-        width: 100%;
-      }
+      body { padding: 18px 12px 32px; }
+      .glass-card, .manage-card { padding: 1.15rem; border-radius: 22px; }
+      .actions { flex-direction: column; }
+      .secondary-btn { width: 100%; }
+      .add-row { flex-direction: column; }
+      .add-btn { justify-content: center; }
     }
   </style>
 </head>
 <body>
   <div class="shell">
-    <div class="topbar">
-      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+
+    <!-- TOP BAR -->
+    <div class="topbar" style="gap:10px;">
+      <button type="button" class="pill-btn" id="manageToggle" aria-expanded="false">
+        <i class="ti ti-users-group"></i>
+        <span>メンバー管理</span>
+      </button>
+      <button type="button" class="pill-btn" data-theme-toggle aria-label="Switch theme">
         <i class="ti ti-moon"></i>
         <span>Dark mode</span>
       </button>
     </div>
 
+    <!-- NAME MANAGER PANEL -->
+    <div class="manage-card" id="manageCard" aria-label="Member management panel">
+      <div class="manage-title-row">
+        <div class="manage-title">
+          <i class="ti ti-users-group"></i>
+          <span>名前テンプレート管理</span>
+        </div>
+        <button type="button" class="pill-btn" id="manageClose" style="padding:6px 10px;">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+
+      <div class="add-row">
+        <input type="text" id="newNameInput" placeholder="名前を入力 / Enter name" maxlength="40" autocomplete="off" />
+        <button type="button" class="add-btn" id="addNameBtn">
+          <i class="ti ti-user-plus"></i>
+          追加
+        </button>
+      </div>
+
+      <ul class="name-list" id="nameList" aria-label="Name list"></ul>
+      <p class="manage-hint">⚠ 変更はこのページのみ有効です。ページを再読み込みするとリセットされます。</p>
+    </div>
+
+    <!-- MAIN FORM CARD -->
     <div class="glass-card">
       <div class="title-row">
-        <div class="title-main">
-          <div class="title-badge"><i class="ti ti-heart-rate-monitor"></i></div>
-          <div>
-            <h2 class="glass-title">体調管理 Health Check</h2>
-            <p class="glass-subtitle">Notion連携フォーム / Daily health log</p>
-          </div>
+        <div class="title-badge"><i class="ti ti-heart-rate-monitor"></i></div>
+        <div>
+          <h2 class="glass-title">体調管理 Health Check</h2>
+          <p class="glass-subtitle">Notion連携フォーム / Daily health log</p>
         </div>
       </div>
 
-      <div class="chip-row" aria-label="Team members">
-        <div class="member-chip"><span class="chip-avatar" style="background:#3b82f6;">小</span><span>小沢健人</span></div>
-        <div class="member-chip"><span class="chip-avatar" style="background:#14b8a6;">藤</span><span>藤谷航汰</span></div>
-        <div class="member-chip"><span class="chip-avatar" style="background:#f59e0b;">阿</span><span>阿部航生</span></div>
-        <div class="member-chip"><span class="chip-avatar" style="background:#8b5cf6;">P</span><span>Pratik P Biswas</span></div>
-        <div class="member-chip"><span class="chip-avatar" style="background:#ec4899;">後</span><span>後藤千鶴</span></div>
-        <div class="member-chip"><span class="chip-avatar" style="background:#10b981;">関</span><span>関寺寛</span></div>
-        <div class="member-chip"><span class="chip-avatar" style="background:#ef4444;">向</span><span>向山弘昭</span></div>
-      </div>
+      <div class="chip-row" id="chipRow" aria-label="Team members"></div>
 
       <form id="healthForm" class="health-form">
         <div class="field-group">
           <label class="field-label" for="name">名前 Name *</label>
           <select id="name" required class="glass-select">
             <option value="">選択してください / Select</option>
-            <option value="小沢健人">小沢健人</option>
-            <option value="藤谷航汰">藤谷航汰</option>
-            <option value="阿部航生">阿部航生</option>
-            <option value="Pratik P Biswas">Pratik P Biswas</option>
-            <option value="後藤千鶴">後藤千鶴</option>
-            <option value="関寺寛">関寺寛</option>
-            <option value="向山弘昭">向山弘昭</option>
           </select>
         </div>
 
         <div class="field-group">
           <label class="field-label" for="temperature">体温 Temperature (℃) *</label>
           <div class="temp-row">
-            <input type="number" id="temperature" step="0.1" min="35" max="42" placeholder="36.5" required class="glass-input" style="flex: 1;" />
+            <input type="number" id="temperature" step="0.1" min="35" max="42" placeholder="36.5" required class="glass-input" style="flex:1;" />
             <span class="temp-unit">℃</span>
           </div>
           <div class="quick-row">
@@ -598,118 +672,233 @@
 
         <div class="actions">
           <button type="submit" class="primary-btn">
-            <i class="ti ti-send" style="font-size: 16px; margin-right: 4px; vertical-align: -2px;" aria-hidden="true"></i>
+            <i class="ti ti-send" style="font-size:16px;margin-right:4px;vertical-align:-2px;" aria-hidden="true"></i>
             Notionに送信 / Submit
           </button>
           <button type="reset" class="secondary-btn">リセット</button>
         </div>
       </form>
 
-      <div id="status" class="status-box" aria-live="polite">
-        <div class="status-icon"><i class="ti ti-loader-2"></i></div>
-        <div class="status-copy">
-          <div class="status-title">待機中</div>
-          <div class="status-detail">フォーム送信後の状態がここに表示されます。</div>
-        </div>
-      </div>
+      <div id="status" class="status-box" aria-live="polite"></div>
     </div>
 
+    <!-- INFO PANEL -->
     <div class="info-panel">
       <p>✓ このアプリについて</p>
       <ul>
         <li>このフォームは Notion の「体調管理DB」と連携しています</li>
-        <li>投稿者の名前を選択して、体調情報を記録できます</li>
+        <li>「メンバー管理」ボタンで名前の追加・削除ができます</li>
         <li>「送信」をクリックするとNotionに自動保存されます</li>
         <li>体温が37℃以上の場合は確認が必要です</li>
       </ul>
     </div>
+
   </div>
 
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycbzXVWMuGstY5tQS3vpTv1rQCgC38dF3IWnHn3TJW8O1kyhYzEMJy1ptJqM3tK26bNnC/exec";
+
+    // ── DEFAULT MEMBERS ──────────────────────────────────────────
+    const DEFAULT_MEMBERS = [
+      { name: "小沢健人",       color: "#3b82f6" },
+      { name: "藤谷航汰",       color: "#14b8a6" },
+      { name: "阿部航生",       color: "#f59e0b" },
+      { name: "Pratik P Biswas", color: "#8b5cf6" },
+      { name: "後藤千鶴",       color: "#ec4899" },
+      { name: "関寺寛",         color: "#10b981" },
+      { name: "向山弘昭",       color: "#ef4444" }
+    ];
+
+    const PALETTE = [
+      "#3b82f6","#14b8a6","#f59e0b","#8b5cf6",
+      "#ec4899","#10b981","#ef4444","#f97316",
+      "#06b6d4","#84cc16","#a855f7","#6366f1"
+    ];
+
+    // Working member list (in-memory only)
+    let members = DEFAULT_MEMBERS.map(m => ({ ...m }));
+
+    // ── THEME ─────────────────────────────────────────────────────
     const root = document.documentElement;
     const themeToggle = document.querySelector('[data-theme-toggle]');
-    const nameSelect = document.getElementById('name');
-    const temperatureInput = document.getElementById('temperature');
-    const statusDiv = document.getElementById('status');
-    const quickButtons = document.querySelectorAll('.quick-btn');
+    let currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-    const teamAccent = {
-      '小沢健人': '#3b82f6',
-      '藤谷航汰': '#14b8a6',
-      '阿部航生': '#f59e0b',
-      'Pratik P Biswas': '#8b5cf6',
-      '後藤千鶴': '#ec4899',
-      '関寺寛': '#10b981',
-      '向山弘昭': '#ef4444'
-    };
-
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      themeToggle.innerHTML = theme === 'dark'
+    function applyTheme(t) {
+      root.setAttribute('data-theme', t);
+      themeToggle.innerHTML = t === 'dark'
         ? '<i class="ti ti-sun"></i><span>Light mode</span>'
         : '<i class="ti ti-moon"></i><span>Dark mode</span>';
-      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     }
 
-    let currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     applyTheme(currentTheme);
-
     themeToggle.addEventListener('click', () => {
       currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
       applyTheme(currentTheme);
     });
 
-    function setStatus(type, title, detail, iconClass) {
-      statusDiv.className = `status-box show ${type}`;
-      statusDiv.innerHTML = `
-        <div class="status-icon"><i class="${iconClass}"></i></div>
-        <div class="status-copy">
-          <div class="status-title">${title}</div>
-          <div class="status-detail">${detail}</div>
+    // ── HELPERS ───────────────────────────────────────────────────
+    function initials(name) {
+      const parts = name.trim().split(/\s+/);
+      if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+      return name.trim()[0] || '?';
+    }
+
+    function pickColor(name) {
+      let hash = 0;
+      for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+      return PALETTE[Math.abs(hash) % PALETTE.length];
+    }
+
+    // ── RENDER ────────────────────────────────────────────────────
+    function renderAll() {
+      renderChips();
+      renderSelect();
+      renderNameList();
+    }
+
+    function renderChips() {
+      const row = document.getElementById('chipRow');
+      row.innerHTML = members.map(m => `
+        <div class="member-chip">
+          <span class="chip-avatar" style="background:${m.color};">${initials(m.name)}</span>
+          <span>${m.name}</span>
         </div>
-      `;
+      `).join('');
     }
 
-    function updateNameAccent() {
-      const color = teamAccent[nameSelect.value] || '#94a3b8';
-      nameSelect.style.boxShadow = `0 0 0 4px ${color}22, inset 0 1px 0 rgba(255,255,255,0.14), 0 8px 24px rgba(15,23,42,0.05)`;
-      nameSelect.style.borderColor = `${color}66`;
+    function renderSelect() {
+      const sel = document.getElementById('name');
+      const current = sel.value;
+      sel.innerHTML = '<option value="">選択してください / Select</option>' +
+        members.map(m => `<option value="${m.name}"${m.name === current ? ' selected' : ''}>${m.name}</option>`).join('');
+      updateNameAccent();
     }
 
-    function updateQuickButtons() {
-      quickButtons.forEach(btn => {
-        btn.classList.toggle('active', temperatureInput.value === btn.dataset.temp);
+    function renderNameList() {
+      const ul = document.getElementById('nameList');
+      if (members.length === 0) {
+        ul.innerHTML = '<li style="padding:12px;text-align:center;color:var(--text-muted);font-size:13px;">メンバーがいません</li>';
+        return;
+      }
+      ul.innerHTML = members.map((m, idx) => `
+        <li class="name-list-item">
+          <span class="name-list-avatar" style="background:${m.color};">${initials(m.name)}</span>
+          <span class="name-list-label">${m.name}</span>
+          ${DEFAULT_MEMBERS.some(d => d.name === m.name)
+            ? '<span class="name-list-tag">デフォルト</span>'
+            : ''}
+          <button type="button" class="delete-btn" data-idx="${idx}" aria-label="Delete ${m.name}">
+            <i class="ti ti-trash" style="font-size:14px;"></i>
+          </button>
+        </li>
+      `).join('');
+
+      ul.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.dataset.idx, 10);
+          members.splice(idx, 1);
+          renderAll();
+        });
       });
     }
 
-    quickButtons.forEach(btn => {
+    // ── ADD NAME ──────────────────────────────────────────────────
+    document.getElementById('addNameBtn').addEventListener('click', () => {
+      const input = document.getElementById('newNameInput');
+      const val = input.value.trim();
+      if (!val) return;
+      if (members.some(m => m.name === val)) {
+        input.style.borderColor = 'rgba(197,34,31,0.5)';
+        setTimeout(() => { input.style.borderColor = ''; }, 1200);
+        return;
+      }
+      members.push({ name: val, color: pickColor(val) });
+      input.value = '';
+      renderAll();
+    });
+
+    document.getElementById('newNameInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('addNameBtn').click();
+      }
+    });
+
+    // ── MANAGE PANEL TOGGLE ───────────────────────────────────────
+    const manageCard = document.getElementById('manageCard');
+    const manageToggle = document.getElementById('manageToggle');
+
+    manageToggle.addEventListener('click', () => {
+      const open = manageCard.classList.toggle('open');
+      manageToggle.setAttribute('aria-expanded', open);
+      if (open) document.getElementById('newNameInput').focus();
+    });
+
+    document.getElementById('manageClose').addEventListener('click', () => {
+      manageCard.classList.remove('open');
+      manageToggle.setAttribute('aria-expanded', 'false');
+    });
+
+    // ── NAME ACCENT ───────────────────────────────────────────────
+    function updateNameAccent() {
+      const sel = document.getElementById('name');
+      const m = members.find(x => x.name === sel.value);
+      const color = m ? m.color : null;
+      sel.style.boxShadow = color
+        ? `0 0 0 4px ${color}22, inset 0 1px 0 rgba(255,255,255,0.14), 0 8px 24px rgba(15,23,42,0.05)`
+        : '';
+      sel.style.borderColor = color ? `${color}66` : '';
+    }
+
+    document.getElementById('name').addEventListener('change', updateNameAccent);
+
+    // ── TEMP QUICK BUTTONS ────────────────────────────────────────
+    const tempInput = document.getElementById('temperature');
+    const quickBtns = document.querySelectorAll('.quick-btn');
+
+    function updateQuickButtons() {
+      quickBtns.forEach(btn => btn.classList.toggle('active', tempInput.value === btn.dataset.temp));
+    }
+
+    quickBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        temperatureInput.value = btn.dataset.temp;
+        tempInput.value = btn.dataset.temp;
         updateQuickButtons();
       });
     });
 
-    temperatureInput.addEventListener('input', updateQuickButtons);
-    nameSelect.addEventListener('change', updateNameAccent);
+    tempInput.addEventListener('input', updateQuickButtons);
 
+    // ── FORM RESET ────────────────────────────────────────────────
     document.getElementById('healthForm').addEventListener('reset', () => {
       setTimeout(() => {
-        nameSelect.style.boxShadow = '';
-        nameSelect.style.borderColor = '';
+        updateNameAccent();
         updateQuickButtons();
-        statusDiv.className = 'status-box';
+        document.getElementById('status').className = 'status-box';
       }, 0);
     });
 
-    document.getElementById('healthForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
+    // ── STATUS ────────────────────────────────────────────────────
+    function setStatus(type, title, detail, icon) {
+      const el = document.getElementById('status');
+      el.className = `status-box show ${type}`;
+      el.innerHTML = `
+        <div class="status-icon"><i class="${icon}"></i></div>
+        <div class="status-copy">
+          <div class="status-title">${title}</div>
+          <div class="status-detail">${detail}</div>
+        </div>`;
+    }
 
-      const name = nameSelect.value;
+    // ── SUBMIT ────────────────────────────────────────────────────
+    document.getElementById('healthForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const name        = document.getElementById('name').value;
       const temperature = parseFloat(document.getElementById('temperature').value) || null;
-      const health = document.getElementById('health').value;
-      const alcohol = parseFloat(document.getElementById('alcohol').value) || 0;
-      const notes = document.getElementById('notes').value;
+      const health      = document.getElementById('health').value;
+      const alcohol     = parseFloat(document.getElementById('alcohol').value) || 0;
+      const notes       = document.getElementById('notes').value;
 
       if (!name || !health || temperature === null) {
         setStatus('error', '入力不足', '名前・体温・健康状態を入力してください。', 'ti ti-alert-circle');
@@ -722,22 +911,20 @@
         await fetch(GAS_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-          },
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify({ name, temperature, health, alcohol, notes })
         });
 
         setStatus('success', '送信完了', 'リクエストを送信しました。Notion反映を確認してください。', 'ti ti-check');
 
-        setTimeout(() => {
-          document.getElementById('healthForm').reset();
-        }, 2800);
-      } catch (error) {
+        setTimeout(() => { document.getElementById('healthForm').reset(); }, 2800);
+      } catch {
         setStatus('error', '送信失敗', '通信に失敗しました。ネットワークまたはGAS設定を確認してください。', 'ti ti-x');
       }
     });
 
+    // ── INIT ──────────────────────────────────────────────────────
+    renderAll();
     updateQuickButtons();
   </script>
 </body>
